@@ -25,6 +25,6 @@ jobs:
         run: |
           gh issue comment $ISSUE_NUMBER --repo $REPO -b "👋 @$OP
           Are you satisified with the resolution of your issue?
-          [Yes](https://...?issue=$ISSUE_URL&response=yes&repo=$REPO) [No](https://...?issue=$ISSUE_URL&response=no&repo=$REPO)
+          [Yes](http://localhost:3001?issue=$ISSUE_URL&response=yes&repo=$REPO) [No](http://localhost:3001?issue=$ISSUE_URL&response=no&repo=$REPO)
           Sharing your experience helps us continually improve ourselves.
           We'd really appreciate you taking a few minutes to share your thoughts with us."
