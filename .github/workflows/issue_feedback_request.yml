@@ -19,7 +19,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_URL: ${{ github.event.issue.htmlUrl }}
+          ISSUE_URL: ${{ github.event.issue }}
           OP: ${{ github.event.issue.user.login }}
           REPO: ${{ github.repository }}
         run: |
