@@ -1,0 +1,25 @@
+# name: Request Feedback on Issue Close
+
+on:
+  issues:
+    types: [closed]
+    
+permissions:
+  issues: write
+  
+jobs:
+  cleanup:
+    name: Request Feedback
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.issue.pull_request && !contains('<maintainer list>', github.event.issue.user.login) }}
+
+    steps:
+      - name: make comment requesting feedback
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_URL: ${{ github.event.issue.htmlUrl }}
+          OP: ${{ github.event.issue.user.login }}
+        run: |
+          gh issue comment $ISSUE_NUMBER --repo <repo> -b "👋 @$OP, are you satisified with the resolution of your issue?\n[Yes](https://...?issue=$ISSUE_URL&response=yes)\n[No](https://...?issue=$ISSUE_URL&response=no)\nSharing your experience helps us continually improve ourselves.\nWe'd really appreciate you taking a few minutes to share your thoughts with us."
