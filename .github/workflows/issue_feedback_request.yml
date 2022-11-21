@@ -20,12 +20,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
-          ISSUE_TITLE: ${{ github.event.issue.title }}
           OP: ${{ github.event.issue.user.login }}
           REPO: ${{ github.repository }}
         run: |
           gh issue comment $ISSUE_NUMBER --repo $REPO -b "👋 @$OP
           Are you satisified with the resolution of your issue?
-          [Yes](http://localhost:3001?issue_num=$ISSUE_NUMBER&issue=$ISSUE_URL&issue_title=$ISSUE_TITLE&response=yes&repo=$REPO&op=$OP) [No](http://localhost:3001?issue_num=$ISSUE_NUMBER&issue=$ISSUE_URL&issue_title=$ISSUE_TITLE&response=no&repo=$REPO&op=$OP)
+          [Yes](http://localhost:3001?issue_num=$ISSUE_NUMBER&issue=$ISSUE_URL&response=yes&repo=$REPO&op=$OP) [No](http://localhost:3001?issue_num=$ISSUE_NUMBER&issue=$ISSUE_URL&response=no&repo=$REPO&op=$OP)
           Sharing your experience helps us continually improve ourselves.
           We'd really appreciate you taking a few minutes to share your thoughts with us."
