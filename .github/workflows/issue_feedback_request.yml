@@ -25,6 +25,6 @@ jobs:
         run: |
           gh issue comment $ISSUE_NUMBER --repo $REPO -b "👋 @$OP
           Are you satisified with the resolution of your issue?
-          [Yes](http://main.d2r4mbnpxyrb49.amplifyapp.com?issue_num=$ISSUE_NUMBER&issue=$ISSUE_URL&response=true&repo=$REPO&op=$OP) [No](http://main.d2r4mbnpxyrb49.amplifyapp.com?issue_num=$ISSUE_NUMBER&issue=$ISSUE_URL&response=false&repo=$REPO&op=$OP)
+          [Yes](http://main.d2r4mbnpxyrb49.amplifyapp.com?issue_num=$ISSUE_NUMBER&issue=$ISSUE_URL&response=yes&repo=$REPO&op=$OP) [No](http://main.d2r4mbnpxyrb49.amplifyapp.com?issue_num=$ISSUE_NUMBER&issue=$ISSUE_URL&response=no&repo=$REPO&op=$OP)
           Sharing your experience helps us continually improve ourselves.
           We'd really appreciate you taking a few minutes to share your thoughts with us."
